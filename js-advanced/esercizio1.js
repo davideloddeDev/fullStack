@@ -27,3 +27,4 @@ adults.forEach(adult => {
 });
 
 
+// https://github.com/davideloddeDev/fullStack/blob/d22aceec7dac576c8515ac0d2932d68a6db12085/js-advanced/esercizio1.js
