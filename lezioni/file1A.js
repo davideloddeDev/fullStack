@@ -32,12 +32,18 @@ function operations(operator, ...numbers) {
 
 
     }
-    runOperation();
+    console.log("Sto calcolando il risultato")
+    setTimeout(runOperation, 2000)
+    let id = setInterval(() => console.log("."), 500)
+    setTimeout(() => {
+        clearInterval(id)
+    }, 1550)
+    
+    
 }
-let somma = operations("+", 2,5,7,9)
-let sottrazione = operations("-", 2,5,7,9)
-let moltiplicazione = operations("*", 2,5,7,9)
-let divisione = operations("/", 2,5,7,9)
 
-console.log(`somma: ${somma}; sottrazione: ${sottrazione}; moltiplicazione: ${moltiplicazione}; divisione: ${divisione}`);
+operations("+", 1 , 2 , 3 , 4 , 5)
+
+
+
 
