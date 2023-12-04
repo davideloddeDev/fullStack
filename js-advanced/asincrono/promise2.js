@@ -50,3 +50,4 @@ function fetchUserData() {
       console.error('Si è verificato un errore:', error);
     });
   
+    // svolto in pair programming con Valentina Li
