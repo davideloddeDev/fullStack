@@ -27,31 +27,3 @@ function caricaModulo(modulo) {
 
 // implementa la funzione asincrona "lanciaVeicoloSpaziale" gestendo gli eventuali errori
 */
-
-function caricaModulo(modulo) {
-    return new Promise((resolve, reject) => {
-      const tempoCaricamento = Math.random() * 3000; // Simula il caricamento con un ritardo casuale fino a 3 secondi.
-      setTimeout(() => {
-        if (tempoCaricamento < 1500) {
-          resolve(`Il modulo ${modulo} è stato caricato.`);
-        } else {
-          reject(`Errore durante il caricamento del modulo ${modulo}.`);
-        }
-      }, tempoCaricamento);
-    });
-  }
-  
-  // implementa la funzione asincrona "lanciaVeicoloSpaziale" gestendo gli eventuali errori
-
-  async function lanciaVeicoloSpaziale(modulo1, modulo2, modulo3) {
-    try {
-        console.log(await caricaModulo(modulo1))
-        console.log(await caricaModulo(modulo2))
-        console.log(await caricaModulo(modulo3))
-    } catch (error) {
-        console.error(`Errore: ${error}`)
-    }
-
-}
-
-lanciaVeicoloSpaziale("A","B","C")
