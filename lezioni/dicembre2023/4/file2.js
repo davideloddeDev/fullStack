@@ -30,6 +30,7 @@ function filterUsers(array, domain) {
                         reject(new Error("Mail dell'utente vuota"))
                     }
                     return user.email.includes(domain)
+                    
                 })
 
                 resolve(filteredArray)
