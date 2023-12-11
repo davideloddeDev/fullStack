@@ -138,7 +138,3 @@ const persons = [
     .catch(error => {
       console.error(error);
     });
-  
-    let numeri = [1,2,3,4]
-    let risultato = numeri.reduce((acc, curr) => acc + curr, 0);
-    console.log(risultato)
