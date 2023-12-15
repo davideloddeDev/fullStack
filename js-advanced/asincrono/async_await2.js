@@ -21,24 +21,38 @@ function caricaModulo(modulo) {
 */
 
 function caricaModulo(modulo) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(`Il modulo ${modulo} è stato caricato.`);
-        }, 2000);
-    });
+  return new Promise((resolve, reject) => {
+      // Simuliamo un caricamento del modulo (ad esempio, da un server)
+      setTimeout(() => {
+          // Simuliamo un errore casuale con una probabilità del 20%
+          if (Math.random() < 0.2) {
+              reject(`Errore durante il caricamento del modulo ${modulo}`);
+          } else {
+              resolve(`Il modulo ${modulo} è stato caricato.`);
+          }
+      }, 2000);
+  });
 }
 
-async function lanciaVeicoloSpaziale(modulo1, modulo2, modulo3) {
-    try {
-        console.log(await caricaModulo(modulo1))
-        console.log(await caricaModulo(modulo2))
-        console.log(await caricaModulo(modulo3))
-    } catch (error) {
-        console.error(error)
-    }
-
+async function lanciaVeicoloSpaziale(...moduli) {
+  for (const modulo of moduli) {
+      try {
+          const risultato = await caricaModulo(modulo);
+          console.log(risultato);
+      } catch (error) {
+          console.error(error);
+          // Puoi decidere se interrompere il caricamento in caso di errore o continuare con i moduli successivi
+      }
+  }
 }
 
-lanciaVeicoloSpaziale("A","B","C")
+// Esempio di utilizzo
+async function caricaModuliSequenziale() {
+  await lanciaVeicoloSpaziale("A");
+  await lanciaVeicoloSpaziale("B");
+  await lanciaVeicoloSpaziale("C");
+}
+
+caricaModuliSequenziale();
 
 
