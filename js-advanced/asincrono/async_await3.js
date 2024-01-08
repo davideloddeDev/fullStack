@@ -43,9 +43,17 @@ function caricaModulo(modulo) {
 
 async function lanciaVeicoloSpaziale() {
   try {
-    console.log(await caricaModulo("A"));
-    console.log(await caricaModulo("B"));
-    console.log(await caricaModulo("C"));
+    console.log("Inizio caricamento modulo A");
+    const moduloA = await caricaModulo('A');
+    console.log(moduloA);
+
+    console.log("Inizio caricamento modulo B");
+    const moduloB = await caricaModulo('B');
+    console.log(moduloB);
+
+    console.log("Inizio caricamento modulo C");
+    const moduloC = await caricaModulo('C');
+    console.log(moduloC);
 
     console.log("Veicolo spaziale pronto per il lancio!");
   } catch (error) {
@@ -53,7 +61,8 @@ async function lanciaVeicoloSpaziale() {
   }
 }
 
-// Esempio di utilizzo
+// Chiamata della funzione per lanciare il veicolo spaziale
 lanciaVeicoloSpaziale();
+
 
 

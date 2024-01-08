@@ -21,38 +21,32 @@ function caricaModulo(modulo) {
 */
 
 function caricaModulo(modulo) {
-  return new Promise((resolve, reject) => {
-      // Simuliamo un caricamento del modulo (ad esempio, da un server)
-      setTimeout(() => {
-          // Simuliamo un errore casuale con una probabilità del 20%
-          if (Math.random() < 0.2) {
-              reject(`Errore durante il caricamento del modulo ${modulo}`);
-          } else {
-              resolve(`Il modulo ${modulo} è stato caricato.`);
-          }
-      }, 2000);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`Il modulo ${modulo} è stato caricato.`);
+    }, 2000);
   });
 }
 
-async function lanciaVeicoloSpaziale(...moduli) {
-  for (const modulo of moduli) {
-      try {
-          const risultato = await caricaModulo(modulo);
-          console.log(risultato);
-      } catch (error) {
-          console.error(error);
-          // Puoi decidere se interrompere il caricamento in caso di errore o continuare con i moduli successivi
-      }
+async function lanciaVeicoloSpaziale() {
+  try {
+    console.log("Inizio caricamento modulo A");
+    const moduloA = await caricaModulo('A');
+    console.log(moduloA);
+
+    console.log("Inizio caricamento modulo B");
+    const moduloB = await caricaModulo('B');
+    console.log(moduloB);
+
+    console.log("Inizio caricamento modulo C");
+    const moduloC = await caricaModulo('C');
+    console.log(moduloC);
+
+    console.log("Veicolo spaziale pronto per il lancio!");
+  } catch (error) {
+    console.error("Si è verificato un errore durante il caricamento dei moduli:", error);
   }
 }
 
-// Esempio di utilizzo
-async function caricaModuliSequenziale() {
-  await lanciaVeicoloSpaziale("A");
-  await lanciaVeicoloSpaziale("B");
-  await lanciaVeicoloSpaziale("C");
-}
-
-caricaModuliSequenziale();
-
-
+// Chiamata della funzione per lanciare il veicolo spaziale
+lanciaVeicoloSpaziale();
