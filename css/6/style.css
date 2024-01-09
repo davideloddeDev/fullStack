@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+nav {
+    background-color: #333;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    line-height: 32px;
+}
+
+.logo {
+    padding: 15px;
+    line-height: 32px;
+}
+
+.logo h1 {
+    color: #fff;
+    margin: 0;
+}
+
+a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.selected a {
+    font-weight: bold;
+}
+
+.unselected a:hover {
+    background-color: #555;
+}
+
+.DropdownMenu {
+    display: inline-block;
+}
+
+.DropdownMenu ul {
+    
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.DropdownMenu:hover ul {
+    
+    display: block;
+}
+
+.DropdownMenu ul li {
+    clear: both;
+    display: block;
+    color: #fff;
+    margin-left: 10px;
+    
+}
+
+.disabled a {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+    color: #5b5e62;
+}
+
+.search {
+    float: right;
+}
+
+form {
+    margin: 0;
+    padding: 10px;
+}
+
+input[type="search"] {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+input[type="submit"] {
+    padding: 8px;
+    font-size: 16px;
+    background-color: #555;
+    color: #208151;
+    border-radius: 5px;
+    border: 1px solid #208151;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
