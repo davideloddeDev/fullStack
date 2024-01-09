@@ -1,3 +1,7 @@
+:root {
+    --background-color: #011212;
+    --ball-color: #ff8800;
+}
 body {
     background-color: #011212;
 }
