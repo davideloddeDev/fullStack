@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 200px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-placeholder {
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links a {
+    padding: 10px;
+    text-decoration: none;
+    color: #2b2b2b;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #2b2bb2;
+}
+
+.user-info {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 50px; 
+    height: 50px; 
+    background-color: #aaa; /* al posto del colore ci va l'immagine dell'avatar */
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+
+/* Aggiungi stili aggiuntivi per migliorare l'aspetto dell'avatar e del nome utente */
+
+.username {
+    font-weight: bold; 
+    color: #333; 
+}
