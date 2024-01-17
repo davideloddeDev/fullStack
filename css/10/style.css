@@ -3,11 +3,6 @@ body {
   margin: 0 auto;
 }
 
-section {
-  padding: 2em;
-  margin: 1em;
-}
-
 #green {
   background-color: #8ffda7;
 }
