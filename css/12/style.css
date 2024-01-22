@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .container {
     display: flex;
     flex-direction: row;
@@ -120,4 +121,29 @@ body {
     margin-top: 0;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1075px) {
+    .container {
+        display: block;
+    }
+    .container>div {
+        float: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container>div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
