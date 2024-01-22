@@ -123,7 +123,7 @@ body {
     padding-right: 10px;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1075px) {
+@media screen and (min-width: 374px) and (max-width: 768px) {
     .container {
         display: block;
     }
@@ -134,7 +134,7 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
     .container {
         display: flex;
         flex-direction: column;
