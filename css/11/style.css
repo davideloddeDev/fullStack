@@ -48,7 +48,7 @@ a {
 }
 
 .DropdownMenu {
-    display: inline-block;
+    display: flex;
 }
 
 .DropdownMenu ul {
@@ -60,12 +60,12 @@ a {
 }
 
 .DropdownMenu:hover ul {
-    display: block;
+    display: flex;
 }
 
 .DropdownMenu ul li {
     clear: both;
-    display: block;
+    display: flex;
     color: #fff;
     margin-left: 10px;
 }
