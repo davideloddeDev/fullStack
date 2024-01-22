@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // Ottieni l'elemento padre di ul
+        var ulParent = document.querySelector('ul').parentElement;
+        console.log("L'elemento padre di ul:", ulParent);
+
+        // Ottieni il secondo elemento figlio di ul
+        var secondChild = document.querySelector('ul').children[1];
+        console.log("Il secondo elemento figlio di ul:", secondChild);
+
+        // Ottieni l'elemento fratello successivo del secondo li
+        var nextSibling = secondChild.nextElementSibling;
+        console.log("L'elemento fratello successivo del secondo li:", nextSibling);
+
+        // Ottieni l'elemento fratello precedente del secondo li
+        var previousSibling = secondChild.previousElementSibling;
+        console.log("L'elemento fratello precedente del secondo li:", previousSibling);
+    </script>
+</body>
+
+</html>
