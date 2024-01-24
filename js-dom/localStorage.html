@@ -1,6 +1,3 @@
-<!--
-Lo scope di questo task è di salvare tutti i dati di un form nel local storage. -Fai in modo che nello span venga inserito il testo che si è inserito nell'input nome -Fai in modo che questi dati si salvino nel local storage -Controlla che al reload il nome nel titolo non scompaia
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,8 +32,38 @@ Lo scope di questo task è di salvare tutti i dati di un form nel local storage.
     </div>
     <button class="btn">Salva</button>
     <p class="printedform"></p>
-    <script>//....</script>
-</body>
 
+    <script>
+        // Funzione per salvare i dati nel localStorage
+        function saveFormData() {
+            const email = document.querySelector('.email').value;
+            const firstname = document.querySelector('.firstname').value;
+            const lastname = document.querySelector('.lastname').value;
+
+            // Salvare i dati nel localStorage
+            localStorage.setItem('email', email);
+            localStorage.setItem('firstname', firstname);
+            localStorage.setItem('lastname', lastname);
+
+            // Aggiornare il titolo con il nome
+            updateTitle();
+        }
+
+        // Funzione per aggiornare il titolo con il nome dal localStorage
+        function updateTitle() {
+            const storedFirstname = localStorage.getItem('firstname') || '';
+            const storedLastname = localStorage.getItem('lastname') || '';
+            const fullName = storedFirstname + ' ' + storedLastname;
+
+            // Aggiornare l'elemento span con il nome
+            document.querySelector('.title-name').textContent = fullName;
+        }
+
+        // Caricare il nome dal localStorage al caricamento della pagina
+        window.onload = updateTitle;
+
+        // Associare la funzione saveFormData al click del pulsante "Salva"
+        document.querySelector('.btn').addEventListener('click', saveFormData);
+    </script>
+</body>
 </html>
--->

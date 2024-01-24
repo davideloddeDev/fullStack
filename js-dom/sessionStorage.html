@@ -1,6 +1,3 @@
-<!--
-Lo scope di questo task è di salvare tutti i dati di un form nel session storage. -Fai in modo che nello span venga inserito il testo che si è inserito nell'input nome -Fai in modo che questi dati si salvino nel session storage
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,8 +32,38 @@ Lo scope di questo task è di salvare tutti i dati di un form nel session storag
     </div>
     <button class="btn">Salva</button>
     <p class="printedform"></p>
-    <script>//....</script>
-</body>
 
+    <script>
+        // Funzione per salvare i dati nel session storage
+        function saveFormData() {
+            const email = document.querySelector('.email').value;
+            const firstname = document.querySelector('.firstname').value;
+            const lastname = document.querySelector('.lastname').value;
+
+            // Salvare i dati nel session storage
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('firstname', firstname);
+            sessionStorage.setItem('lastname', lastname);
+
+            // Aggiornare il titolo con il nome
+            updateTitle();
+        }
+
+        // Funzione per aggiornare il titolo con il nome dal session storage
+        function updateTitle() {
+            const storedFirstname = sessionStorage.getItem('firstname') || '';
+            const storedLastname = sessionStorage.getItem('lastname') || '';
+            const fullName = storedFirstname + ' ' + storedLastname;
+
+            // Aggiornare l'elemento span con il nome
+            document.querySelector('.title-name').textContent = fullName;
+        }
+
+        // Associare la funzione saveFormData al click del pulsante "Salva"
+        document.querySelector('.btn').addEventListener('click', saveFormData);
+
+        // Caricare il nome dal session storage al caricamento della pagina
+        window.onload = updateTitle;
+    </script>
+</body>
 </html>
--->
