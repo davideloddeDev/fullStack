@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: absolute; top: 0; left: 0; width: 20%; height: 20%; background-color: #00ff00;"></div>
+
+    <script>
+        const divStyle = document.querySelector('div');
+        const animationSpeed = 0.5; // Velocità dell'animazione
+
+        function animate() {
+            let currentPosition = parseFloat(divStyle.style.left) || 0;
+            currentPosition += animationSpeed;
+
+            const divWidthPercentage = (divStyle.clientWidth / document.documentElement.clientWidth) * 100;
+
+            divStyle.style.left = currentPosition + "%";
+            divStyle.style.top = currentPosition + "%";
+
+            if (currentPosition + divWidthPercentage < 100) {
+                requestAnimationFrame(animate);
+            }
+        }
+
+        requestAnimationFrame(animate);
+    </script>
+</body>
+
+</html>
+
+
+
+</html>
+
+
