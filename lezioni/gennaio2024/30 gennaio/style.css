@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button{
+    font-size: 20px;
+}
+
+.paragrafo {
+    color: #000000;
+}
+
+.paragrafoRosso {
+    color: #ff0000;
+}
