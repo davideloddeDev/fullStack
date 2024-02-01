@@ -1,20 +1,11 @@
 async function fetchData() {
     try {
-        const response = await fetch('https://api.potterdb.com/v1/books');
-        //console.log(response)
+        const response = await fetch('https://ringsdb.com/api/public/cards/');
         const responseJson = await response.json();
-        const book = responseJson.data[0]
-        const {title, cover} = book.attributes
+        const card = Math.floor(Math.random(responseJson) * responseJson.length); 
 
-        console.log(book)
-        console.log(title)
-        console.log(cover)
-
-        const h1 = document.querySelector('.my-title');
-        const image = document.querySelector('.my-image');
-
-        h1.innerText = title;
-        image.setAttribute('src', cover)
+        document.querySelector('.my-title').innerText = responseJson[card].name;
+        document.querySelector('.my-image').setAttribute('src', "https://ringsdb.com/"+responseJson[card].imagesrc)
     } catch (error) {
         console.error
     }
