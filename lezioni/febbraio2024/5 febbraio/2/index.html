@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <p class="textNumber"></p>
+        <p class="textClickPositivi"></p>
+        <p class="textClickNegativi"></p>
+        <div class="container">
+            <button class="btnPlus">+1</button>
+            <button class="btnMenus">-1</button>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script>
+        const paragrafo = document.querySelector('.textNumber')
+        const paragrafoClickPositivi = document.querySelector('.textClickPositivi')
+        const paragrafoClickNegativi = document.querySelector('.textClickNegativi')
+
+        let data = 0
+        let dataClickPositivi = 0
+        let dataClickNegativi = 0
+
+        document.querySelector('.btnPlus').addEventListener('click', () => {
+
+            data++
+            paragrafo.innerText = data
+            dataClickPositivi++
+            paragrafoClickPositivi.innerText = "I Click positivi sono " + dataClickPositivi
+            
+        })
+        document.querySelector('.btnMenus').addEventListener('click', () => {
+
+            data--
+            paragrafo.innerText = data
+            dataClickNegativi++
+            paragrafoClickNegativi.innerText = "I Click negativi sono " + dataClickNegativi
+
+        })
+
+        paragrafo.innerText = data
+        paragrafoClickPositivi.innerText = "I Click positivi sono " + dataClickPositivi
+        paragrafoClickNegativi.innerText = "I Click negativi sono " + dataClickNegativi
+    </script>
+</body>
+</html>
