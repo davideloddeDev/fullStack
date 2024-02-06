@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 16px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- to do app:
+    card centrata nella pagina
+    - input text
+    - button crea lista
+    - checkbox + testo di input
+    - button che cancella gli elemnti selezionati nel checkbox
+    -->
+
+    <main class="main">
+        <div class="card">
+            <label for="input">To do:</label>
+            <input type="text" class="text">
+            <button class="save">Save</button>
+        </div>
+        <ul class="element">
+
+        </ul>
+        <div>
+            <button class="delete">Delete</button>
+        </div>
+    </main>
+
+    <script>
+
+        const btnSave = document.querySelector('.save')
+        const btnDelete = document.querySelector('.delete')
+
+
+        btnSave.addEventListener('click', () => {
+            let input = document.querySelector('.text').value
+            const ul = document.querySelector('.element')
+            if (input != "") {
+                console.log(input)
+                const li = document.createElement('li')
+                const checkbox = document.createElement('input')
+                checkbox.type = 'checkbox'
+                li.appendChild(checkbox)
+                ul.appendChild(li)
+
+                const span = document.createElement('span')
+                span.innerText = input
+                li.appendChild(span)
+                input = ""
+                
+
+            }
+
+
+        })
+        btnDelete.addEventListener('click', () => {
+            const ul = document.querySelector('.element')
+
+            const items = ul.getElementsByTagName('li')
+            
+            for (let i = items.length - 1; i >= 0; i--) {
+                const check = items[i].getElementsByTagName('input')[0]
+                
+                if(check.checked) {
+                    console.log("test")
+                    ul.removeChild(items[i])
+                }
+            }
+
+            
+
+
+        })
+    </script>
+</body>
+
+</html>
