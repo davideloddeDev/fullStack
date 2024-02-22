@@ -1,6 +1,6 @@
 import { HelloWorld } from './HelloWorld'
 
-export function App() {
+export function Components() {
   
   return (
     <>
