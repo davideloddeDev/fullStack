@@ -1,4 +1,5 @@
 import { Counter } from "./Counter";
+import { MyForm } from "./MyForm";
 import { Welcome } from "./Welcome";
 
 export function App() {
@@ -8,6 +9,7 @@ export function App() {
       <hr />
       <Welcome name="Davide" age={30} />
       <Counter initialValue={30} />
+      <MyForm />
     </div>
   );
 }
