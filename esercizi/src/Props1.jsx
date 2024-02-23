@@ -5,9 +5,7 @@ export function Props() {
 
   return (
     <div>
-      <h1>Questa è la mia App</h1>
-      <hr />
-      <Welcome name="Jimmy" />
+      <Welcome name="Davide" age={30} />
     </div>
   )
 }
