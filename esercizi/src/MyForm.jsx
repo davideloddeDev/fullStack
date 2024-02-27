@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function createData() {
     return {
@@ -10,6 +10,21 @@ function createData() {
 
 export function MyForm() {
   const [data, setData] = useState(createData());
+
+  const mountedRef = useRef(false)
+
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    if (!mountedRef.current) {
+      mountedRef.current = true
+      console.log('Mounting for the first time')
+    }else {
+      console.log('Mounting again for debug purposes');
+    }
+
+    inputRef.current?.focus()
+  }, [])
 
   function handleInputChange(event) {
     const name = event.target.name;
@@ -33,6 +48,7 @@ export function MyForm() {
     <div>
       <h1>Il mio Form</h1>
       <input
+        ref={inputRef}
         name="username"
         value={data.username}
         onChange={handleInputChange}
