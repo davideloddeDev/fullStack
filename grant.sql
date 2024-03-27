@@ -19,4 +19,5 @@ INSERT INTO Books (title, author, genre, published_year, isbn, price, rating, st
 ('The Galactic Odyssey', 'Orion Starfield', 'Science Fiction', 2005, '1234567890126', 19.99, 4.9, 15, 'Nebula Press', 450);
 
 -- Concedere i permessi a Martin
-GRANT SELECT, UPDATE ON Books TO 'martin'@'localhost';
+-- GRANT SELECT, UPDATE ON Books TO 'martin'@'localhost';
+GRANT SELECT, UPDATE ON Books TO [martin];
