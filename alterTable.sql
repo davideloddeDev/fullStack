@@ -7,6 +7,7 @@ CREATE TABLE Books (
     isbn VARCHAR(17),
     price DECIMAL(10, 2),
     rating DECIMAL(3, 2),
-    stock_count INT
+    stock_count INT,
+    publisher VARCHAR(255),
+    number_of_pages INT
 );
-
